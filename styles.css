@@ -1,0 +1,101 @@
+@font-face {
+    font-family: "Vincendo";
+    src: url(Vincendo.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(opensans/OpenSans-Bold.ttf) format("truetype");
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-image: linear-gradient(rgba(255, 130, 37, 0.6), rgba(255, 130, 37, 0.6)), url('http://saje82.web.dania-studerende.dk/kraftkebab/wp-content/uploads/2025/06/banner4.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+header {
+    font-family: "Open Sans", sans-serif;  /* Font familien er Gabarito, som er fundet fra Google Fonts*/
+    display: flex; /* Gør så jeg kan ændre på spacing, alignment osv. inden i navigationsmenuen */
+    align-items: center; /* Centrer ting */
+    justify-content: space-between; /* Bestemmer at ting i navigationsmenuen har plads i mellem sig */
+    background-color: #b43f3F;
+    padding: 1.2em;
+}
+header a {
+    text-decoration: none; /* Sætter så der ingen tekst dekoration skal være */
+    color: #ffffff;
+  }
+  /* Fjerner standardudseendet af input element som er checkbox */
+input[type="checkbox"] {
+    appearance: none;
+  }  
+  /* Hamburgermenuen */
+label {
+    display: none;  /* Skjuler menuen */
+    cursor: pointer;  /* Gør så hvis man har musen over så har man en "pointer" */
+    color: white;
+  }
+  /* Unordered liste som tilhører navigationsmenuen */
+  ul {
+    list-style: none; /* Fjernelse af listens stil, så den ingen har */
+    display: flex; /* Gør så der kan ændres på spacing & alignment i listen */
+    gap: 1em;
+  }
+  
+  /* Listens a tags */
+  ul a {
+    padding: 0.5em;
+  }
+main {
+    padding: 2rem;
+}
+footer {
+    background-color: #173b45;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+footer p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+#logo img {
+    width: 150px;
+    height: auto;
+}
+@media screen and (max-width: 600px) {
+  /* Viser hamburgermenuen */
+  label {
+    display: block;  /* Sætter den i display block, som gør den fylder en hel width/bredde */
+  }
+
+  /* Unordered liste til navigationsmenuen */
+  ul {
+    font-size: 1.2em;
+    position: absolute;  /* Gør positionen til absolute som gør at den fx. kan overlappe andre ting */
+    right: -200%;  /* Sætter listen ude af billedet ved at give den -100% */
+    flex-direction: column;  /* Gør sådan at listen viser a tags i en lodret kolonne */
+    align-items: center;
+    justify-content: center;  /* Bestemmer ting i navigationsmenuen skal være centreret */
+    background-color: #173b45;
+    gap: 2em;
+    top: 95px;  /* Sætter toppen til 60px, så den ikke går over navigationsmenuen*/
+    width: 100%;  /* Sætter bredden til 100% så den fylder det hele */
+    height: calc(100vh - 95px);  /* Sætter højden på listen som bliver regnet ud vha. calc som regner 100% af visningshøjden og fjerner 60px, så navigationsmenuen i toppen
+    bliver hvor den er */
+    transition: 0.5s;   /* Giver en transition tid på et halv sekund, som gør at menuen kommer med en glidende overgang frem og tilbage */
+  }
+  /* Input elementet som er checkbox til navigationsmenuen */
+  input[type="checkbox"]:checked ~ ul {  /* Når alt er markeret/afkrydset i checkboxen så er der en general sibling combinator som vælger alle ul elementer.
+    Som der er søskende til det afkrydset felt */
+    right: 0;  /* Når de er valgt vil ul elementerne have sat deres right til 0, som gør at menuen kommer frem, fra højre side. */
+  }
+}
